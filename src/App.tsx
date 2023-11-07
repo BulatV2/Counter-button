@@ -8,6 +8,12 @@ function App() {
     setCount(count * 2)
   }
 
+const data = [
+  {id: 13, name: 'Nino', surname: 'Bulat'},
+]
+
+const selectedObject = data.find((element) => element.id === count)
+
   return (
     <>
       <h1>Vite + React</h1>
@@ -18,6 +24,14 @@ function App() {
         <button onClick={multiplyByTwo}>
           Multiply by 2
         </button>
+        <p>Selected object:</p>
+        {selectedObject && (
+          <ul>
+            <li>{selectedObject.id}</li>
+            <li>{selectedObject.name}</li>
+            <li>{selectedObject.surname}</li>
+          </ul>
+        )}
       </div>
     </>
   )
